@@ -53,12 +53,37 @@ and everything you've been quietly wishing for.</p>
 <div class="kicker">A few of my favourite frames</div><h2>You, being you. 📸</h2>
 <p>Six little reminders of the person whose smile can change the whole mood.</p>
 <div class="gallery">
-<div class="photo" onclick="openPhoto(1)"><img src="images/devansi-1.jpeg" alt="Devansi"><div class="caption">That smile ✨</div></div>
-<div class="photo" onclick="openPhoto(2)"><img src="images/devansi-2.jpeg" alt="Devansi"><div class="caption">Main character energy</div></div>
-<div class="photo" onclick="openPhoto(3)"><img src="images/devansi-3.jpeg" alt="Devansi"><div class="caption">Simply beautiful</div></div>
-<div class="photo" onclick="openPhoto(4)"><img src="images/devansi-4.jpeg" alt="Devansi"><div class="caption">The candid one</div></div>
-<div class="photo" onclick="openPhoto(5)"><img src="images/devansi-5.jpeg" alt="Devansi"><div class="caption">Okay, this one 😌</div></div>
-<div class="photo" onclick="openPhoto(6)"><img src="images/devansi-6.jpeg" alt="Devansi"><div class="caption">Keep smiling ❤️</div></div>
+
+  <div class="photo" onclick="openPhoto(1)">
+    <img src="images/1.jpeg" alt="Devansi">
+    <div class="caption">That smile ✨</div>
+  </div>
+
+  <div class="photo" onclick="openPhoto(2)">
+    <img src="images/2.jpeg" alt="Devansi">
+    <div class="caption">Main character energy</div>
+  </div>
+
+  <div class="photo" onclick="openPhoto(3)">
+    <img src="images/3.jpeg" alt="Devansi">
+    <div class="caption">Simply beautiful</div>
+  </div>
+
+  <div class="photo" onclick="openPhoto(4)">
+    <img src="images/4.jpeg" alt="Devansi">
+    <div class="caption">The candid one</div>
+  </div>
+
+  <div class="photo" onclick="openPhoto(5)">
+    <img src="images/6.jpeg" alt="Devansi">
+    <div class="caption">Okay, this one 😌</div>
+  </div>
+
+  <div class="photo" onclick="openPhoto(6)">
+    <img src="images/7.jpeg" alt="Devansi">
+    <div class="caption">Keep smiling ❤️</div>
+  </div>
+
 </div>
 <p class="small">Tap any photo to see it full-screen.</p>
 </div></div></section>
@@ -89,7 +114,22 @@ const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersect
 document.querySelectorAll('.reveal').forEach(x=>obs.observe(x));
 function hearts(){const h=document.createElement('div');h.className='heart';h.textContent=['♡','♥','✦','✨'][Math.floor(Math.random()*4)];h.style.left=Math.random()*100+'vw';h.style.setProperty('--x',(Math.random()*180-90)+'px');h.style.animationDuration=(5+Math.random()*4)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),9000)}
 setInterval(hearts,900);
-function openPhoto(n){document.getElementById('modalImg').src='images/devansi-'+n+'.jpeg';document.getElementById('modal').classList.add('show')}
-function closePhoto(){document.getElementById('modal').classList.remove('show')}
+const photos = [
+  'images/1.jpeg',
+  'images/2.jpeg',
+  'images/3.jpeg',
+  'images/4.jpeg',
+  'images/6.jpeg',
+  'images/7.jpeg'
+];
+
+function openPhoto(n){
+  document.getElementById('modalImg').src = photos[n - 1];
+  document.getElementById('modal').classList.add('show');
+}
+
+function closePhoto(){
+  document.getElementById('modal').classList.remove('show');
+}
 </script>
 </body></html>
